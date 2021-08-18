@@ -30,8 +30,18 @@ function App() {
 
       console.log('button2Handler response = ', response)
          
-         //alert(response.data);       
+         const theData = response.data;       
          alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
+         alert(response.data.length);
+         //==========================================================================
+         //alert(theData.length); //works
+         var objs = Array();
+         objs = theData.map((item, index) => ([item.COLUMN_NAME]));
+         alert(objs);
+         alert(objs[4] + " ... " + objs[1]);
+         const x = [...objs];
+         alert(x + " --- " + x[3]);
+         //==========================================================================
       });
 
    });
