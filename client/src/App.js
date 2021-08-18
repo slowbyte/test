@@ -31,7 +31,7 @@ function App() {
       console.log('button2Handler response = ', response)
          
          //alert(response.data);       
-         alert(response.data[2]);
+         alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
       });
 
    });
