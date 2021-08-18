@@ -35,8 +35,8 @@ function App() {
          alert(response.data.length);
          //==========================================================================
          //alert(theData.length); //works
-         var objs = Array();
-         objs = theData.map((item, index) => ([item.COLUMN_NAME]));
+         //var objs = Array();
+         const objs = theData.map((colName) => ([colName.COLUMN_NAME]));
          alert(objs);
          alert(objs[4] + " ... " + objs[1]);
          const x = [...objs];
