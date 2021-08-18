@@ -24,6 +24,29 @@ function App() {
    
    });
 
+   const but2Handler = (() => {
+      //console.log(name,age,country,position,salary)
+      axios.get('http://localhost:3001/columnnames').then((response) => { 
+
+      console.log('button2Handler response = ', response)
+         
+         //alert(response.data);       
+         alert(response.data[2]);
+      });
+
+   });
+      
+      
+            
+     /* ), {
+      }).then(() => {
+         console.log('success for column names')
+      })
+    
+    });*/
+
+   
+
   //console.log(name , age , country , position , salary)
 
 return (
@@ -45,6 +68,7 @@ return (
       <input type="number" onChange={(event) => { 
          setSalary(event.target.value);}} />
       <button onClick={butHandler}>Add Employee</button>
+      <button onClick={but2Handler}>ColumnNames</button>
     </div> 
    </div>
          ) 

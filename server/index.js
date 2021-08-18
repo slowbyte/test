@@ -18,11 +18,34 @@ const db = mysql.createConnection({
     user: 'root',
     password: 'root',
     database: 'react_sql',
-    //host: 'localhost',
-    host: '67.85.230.175:3306'
+    host: 'localhost',    
 });
 console.log('after db - has ran')
 //===============================================================
+
+app.get("/columnnames", (req, res) => {
+  const sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS " +
+        "WHERE TABLE_SCHEMA = 'react_sql' AND TABLE_NAME = 'employees'" +
+         " ORDER BY ORDINAL_POSITION"
+         console.log(sql)
+  db.query(sql, (err, result) => {
+   if (err)
+   {
+    console.log(err)
+   } 
+   else 
+   {       
+     console.log(result)
+     //const oneRetn = result;
+     //const data = oneRetn['COLUMN_NAME'];
+     res.send(result)
+
+     //res.send(result[1][COLUMN_NAME])
+   }
+  }
+  );
+});
+
 app.post("/create", (req, res) => {
     const name = req.body.name;
     const age = req.body.age;
@@ -42,6 +65,27 @@ app.post("/create", (req, res) => {
       }
     );
   });
+
+  /*app.get("/columnnames", (req, res) => {
+    const sql = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS " +
+          "WHERE TABLE_SCHEMA = 'react_sql' AND TABLE_NAME = 'employees'" +
+           " ORDER BY ORDINAL_POSITION"
+           console.log(sql)
+    db.query(sql, async(err, result) => {
+     if (err)
+     {
+      console.log(err)
+     } 
+     else 
+     {       
+       await console.log(result)
+      //res.send("got columns")
+     }
+    }
+    );
+  }); */     
+      
+
 
 //===============================================================
 
