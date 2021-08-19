@@ -28,7 +28,7 @@ function App() {
       //console.log(name,age,country,position,salary)
       axios.get('http://localhost:3001/columnnames').then((response) => { 
 
-      console.log('button2Handler response = ', response)
+      console.log('button2Handler response equals ', response)
          
          const theData = response.data;       
          alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
@@ -42,23 +42,10 @@ function App() {
          const x = [...objs];
          alert(x + " --- " + x[3]);
          //==========================================================================
-      });
-
-   });
+      });                                
+                 
+});
       
-      
-            
-     /* ), {
-      }).then(() => {
-         console.log('success for column names')
-      })
-    
-    });*/
-
-   
-
-  //console.log(name , age , country , position , salary)
-
 return (
    <div className="App">
     <div className="inputs">
