@@ -28,10 +28,15 @@ function App() {
       //console.log(name,age,country,position,salary)
       axios.get('http://localhost:3001/columnnames').then((response) => { 
 
-      console.log('button2Handler response equals ', response)
+      console.log('button2Handler response is ', response)
          
-         const theData = response.data;       
-         alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
+         const theData = response.data;  
+         let columnNames = theData.map((element) => {
+            return element.COLUMN_NAME;
+         });    
+         alert("COLUMN NAMES = " + columnNames);
+         alert("theData[2] = " + columnNames[2]);
+         /*alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
          alert(response.data.length);
          //==========================================================================
          //alert(theData.length); //works
@@ -40,7 +45,7 @@ function App() {
          alert(objs);
          alert(objs[4] + " ... " + objs[1]);
          const x = [...objs];
-         alert(x + " --- " + x[3]);
+         alert(x + " --- " + x[3]);*/
          //==========================================================================
       });                                
                  
