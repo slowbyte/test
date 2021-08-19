@@ -27,15 +27,18 @@ function App() {
    const but2Handler = (() => {
       //console.log(name,age,country,position,salary)
       axios.get('http://localhost:3001/columnnames').then((response) => { 
-
-      console.log('button2Handler response is ', response)
+         console.log('button2Handler response ... ', response)
          
          const theData = response.data;  
          let columnNames = theData.map((element) => {
             return element.COLUMN_NAME;
          });    
          alert("COLUMN NAMES = " + columnNames);
-         alert("theData[2] = " + columnNames[2]);
+         alert("columnNames[5] = " + columnNames[5]);
+      });
+         //========================================================
+
+
          /*alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
          alert(response.data.length);
          //==========================================================================
@@ -47,7 +50,7 @@ function App() {
          const x = [...objs];
          alert(x + " --- " + x[3]);*/
          //==========================================================================
-      });                                
+                                     
                  
 });
       
