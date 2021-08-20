@@ -24,10 +24,9 @@ function App() {
    
    });
 
-   const but2Handler = (() => {
-      //console.log(name,age,country,position,salary)
+   const but2Handler = (() => {  
       axios.get('http://localhost:3001/columnnames').then((response) => { 
-         console.log('button2Handler response ... ', response)
+         console.log('button2Handler response => ', response)
          
          const theData = response.data;  
          let columnNames = theData.map((element) => {
