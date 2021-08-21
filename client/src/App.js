@@ -34,22 +34,7 @@ function App() {
          });    
          alert("COLUMN NAMES = " + columnNames);
          alert("columnNames[5] = " + columnNames[5]);
-      });
-         //========================================================
-
-
-         /*alert(response.data[2].COLUMN_NAME); //this works ok returns 'age'
-         alert(response.data.length);
-         //==========================================================================
-         //alert(theData.length); //works
-         //var objs = Array();
-         const objs = theData.map((colName) => ([colName.COLUMN_NAME]));
-         alert(objs);
-         alert(objs[4] + " ... " + objs[1]);
-         const x = [...objs];
-         alert(x + " --- " + x[3]);*/
-         //==========================================================================
-                                     
+      });                                                                                                                         
                  
 });
       
